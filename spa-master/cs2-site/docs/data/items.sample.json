@@ -1,0 +1,122 @@
+[
+  {
+    "name": "AK-47 | Redline (Field-Tested)",
+    "price": "$25.40",
+    "quantity": 942,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "AWP | Asiimov (Field-Tested)",
+    "price": "$78.25",
+    "quantity": 711,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "M4A1-S | Printstream (Field-Tested)",
+    "price": "$135.00",
+    "quantity": 286,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "Glock-18 | Vogue (Minimal Wear)",
+    "price": "$7.20",
+    "quantity": 389,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "USP-S | Kill Confirmed (Field-Tested)",
+    "price": "$48.50",
+    "quantity": 174,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "Desert Eagle | Printstream (Field-Tested)",
+    "price": "$41.80",
+    "quantity": 203,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "P250 | See Ya Later (Minimal Wear)",
+    "price": "$6.35",
+    "quantity": 116,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "AK-47 | Neon Rider (Field-Tested)",
+    "price": "$32.10",
+    "quantity": 328,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "M4A4 | Neo-Noir (Field-Tested)",
+    "price": "$18.75",
+    "quantity": 221,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "AWP | Hyper Beast (Field-Tested)",
+    "price": "$29.90",
+    "quantity": 187,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "★ Karambit | Doppler (Factory New)",
+    "price": "$1,240.00",
+    "quantity": 18,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "★ Butterfly Knife | Fade (Factory New)",
+    "price": "$2,850.00",
+    "quantity": 7,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "★ M9 Bayonet | Crimson Web (Field-Tested)",
+    "price": "$510.00",
+    "quantity": 31,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "★ Driver Gloves | Snow Leopard (Field-Tested)",
+    "price": "$760.00",
+    "quantity": 12,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "★ Sport Gloves | Vice (Field-Tested)",
+    "price": "$1,180.00",
+    "quantity": 9,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "AK-47 | Slate (Minimal Wear)",
+    "price": "$8.40",
+    "quantity": 502,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "AWP | Redline (Field-Tested)",
+    "price": "$54.20",
+    "quantity": 95,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "M4A1-S | Decimator (Minimal Wear)",
+    "price": "$16.30",
+    "quantity": 163,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "USP-S | Cortex (Field-Tested)",
+    "price": "$4.85",
+    "quantity": 412,
+    "imageUrl": "./assets/item-placeholder.svg"
+  },
+  {
+    "name": "Revolution Case",
+    "price": "$0.42",
+    "quantity": 12480,
+    "imageUrl": "./assets/item-placeholder.svg"
+  }
+]

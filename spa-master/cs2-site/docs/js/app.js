@@ -1,0 +1,1 @@
+import{renderSearchPage}from"./pages/searchPage.js";import{initRouter}from"./router.js";initRouter({"#/items":renderSearchPage,"#/overview":renderSearchPage});
