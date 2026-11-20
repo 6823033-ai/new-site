@@ -34,16 +34,29 @@ async function requestPage(keyword, start) {
 function normalizeListing(listing) {
   const name = String(listing.name || "").trim();
   if (!name) return null;
-  const icon = String(listing.asset_description?.icon_url || listing.icon_url || "").replace(/^\/+/, "");
+  const asset = listing.asset_description || {};
+  const icon = String(asset.icon_url || listing.icon_url || "").replace(/^\/+/, "");
+  const hashName = String(listing.hash_name || name);
   const price = listing.sell_price_text || listing.sale_price_text || (listing.sell_price ? `$${(Number(listing.sell_price) / 100).toFixed(2)}` : "Price unavailable");
-  return {
+  const description = (asset.descriptions || [])
+    .map((entry) => String(entry.value || "").replace(/<[^>]*>/g, " ").replace(/&nbsp;/gi, " ").replace(/\s+/g, " ").trim())
+    .filter(Boolean).join(' ');
+  const tags = Array.isArray(asset.tags) ? asset.tags : [];
+  const rarity = tags.find((tag) => /rarity/i.test(`${tag.category || ''} ${tag.localized_category_name || ''}`))?.localized_tag_name;
+  const item = {
     name,
+    market_hash_name: hashName,
+    market_url: `https://steamcommunity.com/market/listings/730/${encodeURIComponent(hashName)}`,
     price,
-    quantity: Number(listing.sell_listings ?? listing.asset_description?.market_tradable_restriction ?? 0),
+    quantity: Number(listing.sell_listings ?? 0),
     imageUrl: icon ? `https://community.cloudflare.steamstatic.com/economy/image/${icon}/360fx360f` : "",
   };
+  if (description) item.description = description;
+  if (rarity) item.rarityTier = rarity;
+  if (asset.type) item.type = asset.type;
+  if (typeof asset.tradable === "boolean") item.tradable = asset.tradable;
+  return item;
 }
-
 async function main() {
   if (keywords.length === 0) throw new Error("Provide one or more search keywords.");
   const itemsByName = new Map();
