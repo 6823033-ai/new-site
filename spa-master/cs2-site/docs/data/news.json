@@ -1,0 +1,65 @@
+﻿[
+    {
+        "title":  "s1mple与device再聚首！PGL新加坡Major迎来传奇对决",
+        "category":  "CS2",
+        "author":  "5EPlay",
+        "source":  "HLTV",
+        "date":  "2026-11-22",
+        "image":  "./assets/news/s1mple-device.png",
+        "url":  "https://csgo.5eplay.com/article/article-1795360635-9493"
+    },
+    {
+        "title":  "HLTV颁奖典礼改革：年度最佳辅助选手取代年度最佳主点人",
+        "category":  "CS2",
+        "author":  "5EPlay",
+        "source":  "HLTV",
+        "date":  "2026-11-20",
+        "image":  "./assets/news/hltv-support-award.png",
+        "url":  "https://csgo.5eplay.com/article/article-1795184849-3843"
+    },
+    {
+        "title":  "Complexity创始人Jason Lake将获HLTV终身成就奖",
+        "category":  "CS2",
+        "author":  "5EPlay",
+        "source":  "HLTV",
+        "date":  "2026-11-21",
+        "image":  "./assets/news/jason-lake.jpg",
+        "url":  "https://csgo.5eplay.com/article/article-1795218262-7419"
+    },
+    {
+        "title":  "图解新加坡Major：季军赛、125万美元和18张新面孔",
+        "category":  "CS2",
+        "author":  "5EPlay",
+        "source":  "HLTV",
+        "date":  "2026-11-21",
+        "image":  "./assets/news/singapore-major.png",
+        "url":  "https://csgo.5eplay.com/article/article-1795220264-3915"
+    },
+    {
+        "title":  "HLTV出品：新加坡Major第一阶段队伍战力榜",
+        "category":  "CS2",
+        "author":  "5EPlay",
+        "source":  "HLTV",
+        "date":  "2026-11-21",
+        "image":  "./assets/news/major-rankings.png",
+        "url":  "https://csgo.5eplay.com/article/article-1795275356-6073"
+    },
+    {
+        "title":  "全新物品、野怪与机制：DOTA2 7.42版本大更新",
+        "category":  "DOTA2",
+        "author":  "刀塔官方",
+        "source":  "DOTA2",
+        "date":  "2026-11-19",
+        "image":  "./assets/news/dota-742.jpg",
+        "url":  "https://www.dota2.com.cn/article/details/20261119/220540.html"
+    },
+    {
+        "title":  "DOTA2 7.41版本大更新：再见了命石",
+        "category":  "DOTA2",
+        "author":  "刀塔官方",
+        "source":  "DOTA2",
+        "date":  "2026-03-25",
+        "image":  "./assets/news/dota-741.jpg",
+        "url":  "https://www.dota2.com.cn/article/details/20260325/220462.html"
+    }
+]

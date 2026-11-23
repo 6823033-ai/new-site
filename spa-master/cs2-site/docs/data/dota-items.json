@@ -1,0 +1,112 @@
+﻿[
+    {
+        "name":  "Muh Keen Gun",
+        "price":  "$5.45",
+        "quantity":  529,
+        "imageUrl":  "./assets/dota/muh-keen-gun.png",
+        "type":  "Immortal rifle",
+        "rarity":  "Immortal",
+        "hero":  "Sniper",
+        "marketUrl":  "https://steamcommunity.com/market/listings/570/Muh%20Keen%20Gun"
+    },
+    {
+        "name":  "Bloodmayne Avenger",
+        "price":  "$0.37",
+        "quantity":  562,
+        "imageUrl":  "./assets/dota/bloodmayne-avenger.png",
+        "type":  "Immortal head",
+        "rarity":  "Immortal",
+        "hero":  "Lycan",
+        "marketUrl":  "https://steamcommunity.com/market/listings/570/Bloodmayne%20Avenger"
+    },
+    {
+        "name":  "Phantom Concord",
+        "price":  "$1.90",
+        "quantity":  321,
+        "imageUrl":  "./assets/dota/phantom-concord.png",
+        "type":  "Immortal spear",
+        "rarity":  "Immortal",
+        "hero":  "Phantom Lancer",
+        "marketUrl":  "https://steamcommunity.com/market/listings/570/Phantom%20Concord"
+    },
+    {
+        "name":  "Codicil of the Veiled Ones",
+        "price":  "$20.94",
+        "quantity":  48,
+        "imageUrl":  "./assets/dota/codicil-of-the-veiled-ones.png",
+        "type":  "Immortal head",
+        "rarity":  "Immortal",
+        "hero":  "Phantom Assassin",
+        "marketUrl":  "https://steamcommunity.com/market/listings/570/Codicil%20of%20the%20Veiled%20Ones"
+    },
+    {
+        "name":  "Primal Paean",
+        "price":  "$5.42",
+        "quantity":  52,
+        "imageUrl":  "./assets/dota/primal-paean.png",
+        "type":  "Immortal shoulders",
+        "rarity":  "Immortal",
+        "hero":  "Beastmaster",
+        "marketUrl":  "https://steamcommunity.com/market/listings/570/Primal%20Paean"
+    },
+    {
+        "name":  "Stoneclaw Scavengers Radiant Towers",
+        "price":  "$1.90",
+        "quantity":  677,
+        "imageUrl":  "./assets/dota/stoneclaw-scavengers-radiant-towers.jpg",
+        "type":  "Legendary radiant towers",
+        "rarity":  "Legendary",
+        "hero":  "Other",
+        "marketUrl":  "https://steamcommunity.com/market/listings/570/Stoneclaw%20Scavengers%20Radiant%20Towers"
+    },
+    {
+        "name":  "Arms of Desolation",
+        "price":  "$10.39",
+        "quantity":  391,
+        "imageUrl":  "./assets/dota/arms-of-desolation.png",
+        "type":  "Immortal arms",
+        "rarity":  "Immortal",
+        "hero":  "Shadow Fiend",
+        "marketUrl":  "https://steamcommunity.com/market/listings/570/Arms%20of%20Desolation"
+    },
+    {
+        "name":  "Sufferwood Sapling",
+        "price":  "$1.63",
+        "quantity":  433,
+        "imageUrl":  "./assets/dota/sufferwood-sapling.png",
+        "type":  "Immortal staff",
+        "rarity":  "Immortal",
+        "hero":  "Nature\u0027s Prophet",
+        "marketUrl":  "https://steamcommunity.com/market/listings/570/Sufferwood%20Sapling"
+    },
+    {
+        "name":  "Shifty\u0027s Shortblade",
+        "price":  "$0.65",
+        "quantity":  596,
+        "imageUrl":  "./assets/dota/shifty-s-shortblade.png",
+        "type":  "Immortal dagger",
+        "rarity":  "Immortal",
+        "hero":  "Riki",
+        "marketUrl":  "https://steamcommunity.com/market/listings/570/Shifty%27s%20Shortblade"
+    },
+    {
+        "name":  "Shadow Masquerade",
+        "price":  "$2.12",
+        "quantity":  95,
+        "imageUrl":  "./assets/dota/shadow-masquerade.png",
+        "type":  "Immortal wearable",
+        "rarity":  "Immortal",
+        "hero":  "Riki",
+        "marketUrl":  "https://steamcommunity.com/market/listings/570/Shadow%20Masquerade"
+    },
+    {
+        "name":  "Cannonroar Confessor - Weapon",
+        "price":  "$2.93",
+        "quantity":  246,
+        "imageUrl":  "./assets/dota/cannonroar-confessor-weapon.png",
+        "type":  "Immortal weapon",
+        "rarity":  "Immortal",
+        "hero":  "Lion",
+        "marketUrl":  "https://steamcommunity.com/market/listings/570/Cannonroar%20Confessor%20-%20Weapon"
+    }
+]

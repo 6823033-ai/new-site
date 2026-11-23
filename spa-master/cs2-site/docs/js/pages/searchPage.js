@@ -1,9 +1,9 @@
-import { getItems, isUsingSampleData } from "../services/itemService.js";
+﻿import { getItems, isUsingSampleData } from "../services/itemService.js";
 import { renderGrid, renderSkeletons } from "../layouts/gridPageLayout.js";
 import { renderCarousels } from "../components/carousel.js";
 import { initDetailModal, openModal } from "../components/detailModal.js";
 import { initItemSearch, filterItems } from "../components/itemSearch.js";
-import { resolveGridItemImages } from "../config.js";
+import { HERO_ITEMS_URL, resolveGridItemImages } from "../config.js";
 
 const MOST_EXPENSIVE_COUNT = 8;
 let items = [], query = "", category = "", resultsVersion = 0;
@@ -58,17 +58,18 @@ async function renderResults() {
 
 async function loadData() {
   const results = document.getElementById("results"), count = document.getElementById("result-count");
-  count.textContent = "Loading items…"; results.innerHTML = renderSkeletons();
+  count.textContent = "Loading itemsâ€¦"; results.innerHTML = renderSkeletons();
   try {
-    const [loadedItems, heroResponse] = await Promise.all([getItems(), fetch("./data/hero-items.json")]);
-    if (!heroResponse.ok) throw new Error(`Could not load hero-items.json (${heroResponse.status}).`);
+    const [loadedItems, heroResponse] = await Promise.all([getItems(), fetch(HERO_ITEMS_URL)]);
+    if (!heroResponse.ok) throw new Error(`Could not load hero items (${heroResponse.status}).`);
     const namesByRow = await heroResponse.json();
     items = loadedItems;
-    renderCarousels(items, namesByRow); bindCards(document.getElementById("hero-rails"));
+    const carouselItems = await resolveGridItemImages(items);
+    renderCarousels(carouselItems, namesByRow); bindCards(document.getElementById("hero-rails"));
     await Promise.all([renderResults(), renderMostExpensive()]);
   } catch (error) {
     count.textContent = "Unable to load listings";
-    results.innerHTML = `<div class="state error"><h2>Items couldn’t be loaded</h2><p>${String(error.message).replace(/[&<>"']/g, "")}</p><button class="retry-button" id="retry-items" type="button">Retry</button></div>`;
+    results.innerHTML = `<div class="state error"><h2>Items couldnâ€™t be loaded</h2><p>${String(error.message).replace(/[&<>"']/g, "")}</p><button class="retry-button" id="retry-items" type="button">Retry</button></div>`;
     document.getElementById("retry-items").addEventListener("click", loadData);
   }
 }

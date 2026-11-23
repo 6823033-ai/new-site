@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CS2 and Dota 2 esports news">
+  <link rel="stylesheet" href="./css/news.css">
+  <title>CS2 &amp; Dota 2 News</title>
+</head>
+<body class="news-page">
+  <header class="news-topbar">
+    <nav class="news-tabs" aria-label="News categories">
+      <button class="news-tab active" type="button" data-news-filter="all" aria-pressed="true">Бүгд</button>
+      <button class="news-tab" type="button" data-news-filter="CS2" aria-pressed="false"><span class="game-mark cs-mark" aria-hidden="true">↗</span>CS2</button>
+      <button class="news-tab" type="button" data-news-filter="DOTA2" aria-pressed="false"><span class="game-mark dota-mark" aria-hidden="true">◆</span>DOTA2</button>
+    </nav>
+    <a class="news-market-link" href="./index.html">Market</a>
+  </header>
+  <main class="news-list" id="news-list" aria-live="polite"><p class="news-state">Мэдээ ачаалж байна…</p></main>
+  <script type="module" src="./js/news.js"></script>
+</body>
+</html>
