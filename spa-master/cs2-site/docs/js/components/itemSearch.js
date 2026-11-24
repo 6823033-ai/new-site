@@ -12,6 +12,8 @@
   }));
 }
 
+import { translateItemName } from "../i18n.js";
+
 const CS_FILTERS = {
   knife: ["knife", "dagger", "bayonet", "karambit", "talon", "kukri"],
   rifle: ["ak-", "m4", "aug", "sg 553", "galil", "famas", "awp", "ssg", "scar-20", "g3sg1"],
@@ -32,6 +34,8 @@ export function filterItems(items, query = "", category = "") {
     const matchesCategory = !category || (terms[category] || []).some((term) =>
       name.includes(term) || detail.includes(term),
     );
-    return (!search || name.includes(search)) && matchesCategory;
+    const translatedName = translateItemName(item.name).toLocaleLowerCase();
+    return (!search || name.includes(search) || translatedName.includes(search)) && matchesCategory;
   });
 }
+

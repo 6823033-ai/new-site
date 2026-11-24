@@ -1,7 +1,10 @@
 import { escapeHtml } from "./itemCard.js";
 import { ITEM_PLACEHOLDER_IMAGE } from "../config.js";
+import { applyLanguage, translate, translateItemName } from "../i18n.js";
+import { isSaved, removeSavedItem, saveItem } from "./savedItems.js";
 
 let backdrop, modal, content, closeButton, previousFocus, isOpen = false, onStateChange = () => {};
+let activeItem = null;
 const TABS = ["market", "trading", "investment", "lore"];
 const getFocusable = () => [...modal.querySelectorAll('button:not([disabled]),a[href]')];
 
@@ -45,6 +48,13 @@ function selectTab(tabName, focus = false) {
   content.querySelectorAll("[data-detail-panel]").forEach((panel) => {
     panel.hidden = panel.dataset.detailPanel !== tabName;
   });
+}
+function syncSaveButton() {
+  const button = content?.querySelector("[data-save-item]");
+  if (!button || !activeItem) return;
+  const saved = isSaved(activeItem);
+  button.textContent = saved ? `✓ ${translate("Remove Saved Item")}` : `♡ ${translate("Save Item")}`;
+  button.setAttribute("aria-pressed", String(saved));
 }
 function renderInsights(item) {
   const currentPrice = getValue(item, ["price", "currentPrice", "current_price"]);
@@ -100,6 +110,11 @@ export function initDetailModal(onChange = () => {}) {
   content.addEventListener("click", (event) => {
     const button = event.target.closest("[data-detail-tab]");
     if (button) selectTab(button.dataset.detailTab);
+    if (event.target.closest("[data-save-item]") && activeItem) {
+      if (isSaved(activeItem)) removeSavedItem(activeItem);
+      else saveItem(activeItem);
+      syncSaveButton();
+    }
   });
   content.addEventListener("keydown", (event) => {
     const button = event.target.closest("[data-detail-tab]");
@@ -111,12 +126,18 @@ export function initDetailModal(onChange = () => {}) {
     selectTab(TABS[next], true);
   });
   document.addEventListener("keydown", handleKeydown);
+  window.addEventListener("saved-items:change", syncSaveButton);
+  window.addEventListener("market-viewer:language", syncSaveButton);
 }
 export function openModal(item, trigger) {
+  activeItem = { ...item, game: item.game || document.body.dataset.game || "cs" };
   previousFocus = trigger || document.activeElement;
   const image = item.imageUrl || ITEM_PLACEHOLDER_IMAGE;
   const url = getMarketUrl(item);
-  content.innerHTML = `<div class="modal-layout"><section class="modal-showcase"><div class="modal-item-heading"><p class="eyebrow">MARKET ITEM</p><h2 id="modal-title">${escapeHtml(item.name)}</h2></div><img class="modal-img" alt="${escapeHtml(item.name)}" loading="eager" src="${escapeHtml(image)}" onerror="this.onerror=null;this.src='${ITEM_PLACEHOLDER_IMAGE}'"></section><section class="modal-info-band" aria-label="Item information">${renderInsights(item)}${url ? `<div class="modal-market-action"><a class="modal-market-link" target="_blank" rel="noopener noreferrer" href="${escapeHtml(url)}">View Steam listing</a></div>` : ""}</section></div>`;
+  const translatedName = translateItemName(item.name);
+  content.innerHTML = `<div class="modal-layout"><section class="modal-showcase"><div class="modal-item-heading"><p class="eyebrow">MARKET ITEM</p><h2 id="modal-title">${escapeHtml(translatedName)}</h2></div><img class="modal-img" alt="${escapeHtml(translatedName)}" loading="eager" src="${escapeHtml(image)}" onerror="this.onerror=null;this.src='${ITEM_PLACEHOLDER_IMAGE}'"></section><section class="modal-info-band" aria-label="Item information">${renderInsights(item)}<div class="saved-item-action"><button type="button" data-save-item aria-pressed="false"></button></div>${url ? `<div class="modal-market-action"><a class="modal-market-link" target="_blank" rel="noopener noreferrer" href="${escapeHtml(url)}">View Steam listing</a></div>` : ""}</section></div>`;
+  applyLanguage(content);
+  syncSaveButton();
   selectTab("market");
   backdrop.hidden = false; document.body.classList.add("locked"); isOpen = true; onStateChange(true); closeButton.focus();
 }

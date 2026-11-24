@@ -5,6 +5,9 @@ let articles = [];
 let activeFilter = "all";
 let favorites = new Set();
 
+import { applyLanguage, initLanguage, getLanguage } from "./i18n.js";
+import { initSavedItems } from "./components/savedItems.js";
+
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, (character) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -31,7 +34,8 @@ function render() {
     .filter(({ article }) => activeFilter === "all" || article.category === activeFilter);
   list.innerHTML = shown.length
     ? shown.map(({ article, index }) => card(article, index)).join("")
-    : '<p class="news-state">Одоогоор энэ ангилалд мэдээ алга.</p>';
+    : `<p class="news-state">${getLanguage() === "MN" ? "Одоогоор энэ ангилалд мэдээ алга." : getLanguage() === "ZH" ? "此分类暂无新闻。" : "No news in this category yet."}</p>`;
+  applyLanguage(list);
 }
 
 filterButtons.forEach((button) => button.addEventListener("click", () => {
@@ -54,6 +58,9 @@ list.addEventListener("click", (event) => {
 });
 
 try { favorites = new Set(JSON.parse(localStorage.getItem(favoritesKey) || "[]")); } catch {}
+initLanguage();
+initSavedItems();
+window.addEventListener("market-viewer:language", render);
 fetch("./data/news.json")
   .then((response) => { if (!response.ok) throw new Error(`News could not be loaded (${response.status}).`); return response.json(); })
   .then((data) => { articles = data; render(); })
